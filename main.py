@@ -3,16 +3,16 @@ import json
 import os
 from COMMANDS import * #imports files from the folder COMMANDS
 
-#import settings
-with open("settings.json") as settings_file:
-    settings = json.load(settings_file)
-    
-print("Hello! My name is " + settings["NAME"] + ".")
+print("Hello! My name is Jenry II.") ## cant use settings["NAME"] because its being used in the main loop
 
 # main loop
 while True:
-    cmd=input("input command: ").lower()  
+    cmd=input("input command: ").lower()  # command input, eerythign relies on this
     
+    #constantly update to check for updates in settings.json 
+    with open("settings.json") as settings_file:
+        settings = json.load(settings_file) 
+        
     ## built-in commands
     if cmd in ["q","quit","exit"]:
         cm=input("Are you sure? (y/n): ").lower()
