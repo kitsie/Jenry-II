@@ -31,21 +31,17 @@ while True:
     elif cmd=="clear":
         os.system('cls')
         
-           
-    ## imported commands
-    elif cmd == "hw": sample.hello_world()  
-    elif cmd == "echo": sample.echo(settings['NAME'])
-    elif cmd == "jenry": tribute.jenry()
-    elif cmd == "game": game.gameLoop()
-    
+  
     ## help
     elif cmd == "help":
-        print("Here's a list of commands and what they do:\n\n" +
+        print("Here's a list of commands and what they do:\n\nBUILT IN COMMANDS\n" +
+              
               
               "q/quit   :    terminates program\n"  +
               "info     :    prints current settings and credits\n" +
               "nf       :    creates a new text file with your input\n" +
               "clear    :    clears console\n")
+        
         if settings["information"]["mode"] == 0:
             print(
                 "SAMPLE\n"+
@@ -53,7 +49,15 @@ while True:
                 sample.help_echo +
                 tribute.help_jenry +
                 game.help_game)
-            
+           
+    ## imported commands
+    
+    if settings["information"]["mode"] == 0: #sample programs mode
+        if cmd == "hw": sample.hello_world()  
+        elif cmd == "echo": sample.echo(settings['NAME'])
+        elif cmd == "jenry": tribute.jenry()
+        elif cmd == "game": game.gameLoop()
+                   
         
     else: 
         print("err: command: " + cmd + " does not exist. Use command 'help' for list of commands..")
