@@ -16,14 +16,12 @@ def gameLoop():
             attack= random.randint(15,20)
             potDrop= random.randint(1,3)
             
-            try:
-                if option == 1:return health
-                elif option == 2:return attack
-                elif option == 3:return potDrop
-                elif option == 4: return name
-            except: 
-                # im too lazy to edit all the genEnemy(4) so ill just make it so if theres no input, itll just return name 
-                return name 
+            # removed try and except because it didnt work either way
+            if option == 1:return health
+            elif option == 2:return attack
+            elif option == 3:return potDrop
+            elif option == 4: return name
+  
             
     eneHealth = genEnemy(1)   
     
